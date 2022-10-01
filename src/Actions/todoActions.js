@@ -1,0 +1,8 @@
+export const TYPE = {
+    ADD_TASK: "ADD_TASK",
+    REMOVE_TASK: "REMOVE_TASK",
+    CLEAR_ALL: "CLEAR_ALL",
+    CHANGE_STATUS:"CHANGE_STATUS",
+};
+
+
