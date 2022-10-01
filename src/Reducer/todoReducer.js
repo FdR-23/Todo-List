@@ -6,31 +6,30 @@ export const initialState = {
 
 const todoReducer = (state = initialState, action) => {
     switch (action.type) {
-
         case TYPE.ADD_TASK:
             return {
                 ...state,
                 todo: [...state.todo, action.payload]
             };
-
         case TYPE.REMOVE_TASK:
-
             return {
                 ...state,
                 todo: state.todo.filter(e => e.id !== action.payload)
             };
-
+        case TYPE.REMOVE_ALL_COMPLETED_TASKS:
+            return {
+                ...state,
+                todo: state.todo.filter(e => e.completed !== action.payload)
+            };
         case TYPE.CHANGE_STATUS:
             return {
                 ...state,
-              
+
             };
         case TYPE.CLEAR_ALL:
             return {
                 todo: []
             };
-
-
         default:
             return state;
     };

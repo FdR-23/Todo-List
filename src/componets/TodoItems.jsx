@@ -1,12 +1,13 @@
 import React from 'react'
 
-function TodoItems({ element, deletTask, onComplete }) {
-    const { name, fecha, id, completed } = element
+function TodoItems({ element, deletTask, onCompleteTask }) {
+    const { name,  id, completed } = element
 
 
 
     const handleChange = (id) => {
-        onComplete(id)
+        onCompleteTask(id)
+
     }
 
     const handleClick = (id) => {
@@ -20,12 +21,39 @@ function TodoItems({ element, deletTask, onComplete }) {
         grid grid-cols-6 border-b-2 border-indigo-800 gap-2 p-1'>
 
 
-            <div className='bg-pink-100 '>{fecha}</div>
+            <div className='bg-pink-100 '>#{id} </div>
             <p className='bg-pink-200 col-span-3 overflow-auto'>{name}</p>
             <div className='bg-pink-300'>
-                <input type="checkbox"
-                    checked={completed}
-                    onChange={() => handleChange(id)} />Completed</div>
+
+                <button type="checkbox"
+                    onClick={() => handleChange(id)}>
+                    {completed === true ?
+                        <svg className="fill-blue-500" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 330 330" width="25px" height="25px" >
+
+                            <path d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.981,0,165,0z M165,300
+		                        c-74.44,0-135-60.561-135-135S90.56,30,165,30s135,60.561,135,135S239.439,300,165,300z"/>
+                            <path d="M226.872,106.664l-84.854,84.853l-38.89-38.891c-5.857-5.857-15.355-5.858-21.213-0.001
+		                        c-5.858,5.858-5.858,15.355,0,21.213l49.496,49.498c2.813,2.813,6.628,4.394,10.606,4.394c0.001,0,0,0,0.001,0
+		                        c3.978,0,7.793-1.581,10.606-4.393l95.461-95.459c5.858-5.858,5.858-15.355,0-21.213
+		                        C242.227,100.807,232.73,100.806,226.872,106.664z"/>
+
+                        </svg> :
+                        <svg className="fill-red-500" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 330 330" width="25px" height="25px" >
+
+                            <path d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.981,0,165,0z M165,300
+                                c-74.44,0-135-60.561-135-135S90.56,30,165,30s135,60.561,135,135S239.439,300,165,300z"/>
+                            <path d="M226.872,106.664l-84.854,84.853l-38.89-38.891c-5.857-5.857-15.355-5.858-21.213-0.001
+                                c-5.858,5.858-5.858,15.355,0,21.213l49.496,49.498c2.813,2.813,6.628,4.394,10.606,4.394c0.001,0,0,0,0.001,0
+                                c3.978,0,7.793-1.581,10.606-4.393l95.461-95.459c5.858-5.858,5.858-15.355,0-21.213
+                                C242.227,100.807,232.73,100.806,226.872,106.664z"/>
+
+                        </svg>}
+                </button>
+
+
+            </div>
 
             <div className='flex flex-row  justify-center '>
                 <button className='hover:scale-110 ease-in-out duration-300' onClick={() => handleClick(id)}>
