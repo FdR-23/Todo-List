@@ -1,6 +1,5 @@
 import React, { useReducer, useState } from 'react'
 import TodoList from './componets/TodoList';
-import Task from './componets/Task';
 import Navbar from './componets/Navbar';
 import todoReducer, { initialState } from './Reducer/todoReducer.js'
 import { TYPE } from './Actions/todoActions.js'
@@ -69,13 +68,13 @@ function App() {
   }
 
   return (
-    <div className='w-6/12 h-screen m-auto  my-2 flex flex-col  items-center '>
-      <Navbar></Navbar>
-      <Task
+    <div className='w-11/12 m-auto my-7 flex flex-col  items-center   '>
+      <Navbar
         addTodo={addTodo}
         clearAll={clearAll}
-        deletAllCompleteTask={deletAllCompleteTask}
-      />
+        deletAllCompleteTask={deletAllCompleteTask} 
+        />
+
       <TodoList tasks={state.todo}
         deletTask={deletTask}
         onCompleteTask={onCompleteTask} />

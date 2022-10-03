@@ -1,9 +1,14 @@
 import React from 'react'
-
-function Navbar() {
+import Task from './Task.jsx';
+function Navbar({ addTodo, clearAll, deletAllCompleteTask }) {
     return (
-        <header className='bg-slate-500 p-2 w-full flex flex-row justify-center'>
-            <h1 className='text-4xl  '>TODO LIST</h1>
+        <header className='w-full flex flex-col items-center justify-center'>
+            <h1 className='text-4xl font-semibold m-2'>To-Do List</h1>
+            <Task 
+                addTodo={addTodo}
+                clearAll={clearAll}
+                deletAllCompleteTask={deletAllCompleteTask}
+            />
         </header >
 
     )

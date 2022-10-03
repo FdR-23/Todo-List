@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      alumni: ["Alumni Sans Collegiate One"],
+      ubuntu: ["Ubuntu"],
+    },
+
   },
   plugins: [],
 }
